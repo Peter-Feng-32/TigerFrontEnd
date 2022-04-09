@@ -99,7 +99,7 @@ FLOATLIT
 ID
 
 rule names:
-program
+test
 
 
 atn:

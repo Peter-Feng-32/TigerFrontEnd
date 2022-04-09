@@ -8,7 +8,9 @@ grammar Tiger;
  
  Parsing rules. Lowercase.
  */
-program: MAIN GREATER_EQUAL ID;
+
+//IGNORE THIS RULE.  STRICTLY MADE FOR TESTING PURPOSES 
+test: MAIN GREATER_EQUAL ID;
 
 /*
  Lexing rules. Uppercase. Rules are applied top to bottom. In the case that more than one.

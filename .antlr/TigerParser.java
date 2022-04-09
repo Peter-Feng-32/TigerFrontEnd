@@ -24,10 +24,10 @@ public class TigerParser extends Parser {
 		NOT_EQUAL=39, GREATER=40, GREATER_EQUAL=41, AND=42, OR=43, ASSIGNMENT=44, 
 		INTLIT=45, FLOATLIT=46, ID=47;
 	public static final int
-		RULE_program = 0;
+		RULE_test = 0;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"program"
+			"test"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -105,19 +105,19 @@ public class TigerParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	public static class ProgramContext extends ParserRuleContext {
+	public static class TestContext extends ParserRuleContext {
 		public TerminalNode MAIN() { return getToken(TigerParser.MAIN, 0); }
 		public TerminalNode GREATER_EQUAL() { return getToken(TigerParser.GREATER_EQUAL, 0); }
 		public TerminalNode ID() { return getToken(TigerParser.ID, 0); }
-		public ProgramContext(ParserRuleContext parent, int invokingState) {
+		public TestContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_program; }
+		@Override public int getRuleIndex() { return RULE_test; }
 	}
 
-	public final ProgramContext program() throws RecognitionException {
-		ProgramContext _localctx = new ProgramContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_program);
+	public final TestContext test() throws RecognitionException {
+		TestContext _localctx = new TestContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_test);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
