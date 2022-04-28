@@ -12,18 +12,11 @@ public class TigerBaseErrorListener extends BaseErrorListener {
         {
             Parser parser = (Parser) recognizer;
 
-            String name = parser.getSourceName();
             TokenStream tokens = parser.getInputStream();
 
-
-            Token offSymbol = (Token) offendingSymbol;
-            int thisError = offSymbol.getTokenIndex();
-
-            String offSymName = TigerParser.VOCABULARY.getSymbolicName(offSymbol.getType());
             String offSymText = ((Token) offendingSymbol).getText();
 
             System.out.println();
-
             System.out.println("Generated Error Message: " + msg);
             System.out.println("Syntax error at line " + line + ": " + "at symbol \"" + offSymText + "\": ");
             if (e != null)
