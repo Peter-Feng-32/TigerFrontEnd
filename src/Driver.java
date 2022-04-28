@@ -13,14 +13,14 @@ public class Driver {
         String filename = args[0];
         CharStream c = CharStreams.fromFileName(filename);
         TigerLexer tlex = new TigerLexer(c);
-        tlex.addErrorListener(TigerLexicalErrorListener.INSTANCE);
+        tlex.addErrorListener(new TigerLexicalErrorListener());
         BufferedTokenStream bts = new BufferedTokenStream(tlex);
         TigerParser tpars = new TigerParser(bts);
         tpars.removeErrorListeners();
-        tpars.addErrorListener(TigerBaseErrorListener.INSTANCE);
+        tpars.addErrorListener(new TigerBaseErrorListener());
         tpars.tiger_program();
         if (!syntaxError && !lexicalError) {
             System.out.println("successful parse");
-        } 
+        }
     }
 }
