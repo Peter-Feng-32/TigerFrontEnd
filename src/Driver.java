@@ -7,7 +7,8 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.tree.*;
 import java.io.IOException;
 public class Driver {
-    public static int k = 0;
+    public static boolean lexicalError = false;
+    public static boolean syntaxError = false;
     public static void main(String[] args) throws IOException{
         String filename = args[0];
         CharStream c = CharStreams.fromFileName(filename);
@@ -18,7 +19,7 @@ public class Driver {
         tpars.removeErrorListeners();
         tpars.addErrorListener(TigerBaseErrorListener.INSTANCE);
         tpars.tiger_program();
-        if (k == 0) {
+        if (!syntaxError && !lexicalError) {
             System.out.println("successful parse");
         } 
     }
