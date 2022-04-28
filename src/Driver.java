@@ -11,13 +11,12 @@ public class Driver {
     public static void main(String[] args) throws IOException{
         String filename = args[0];
         CharStream c = CharStreams.fromFileName(filename);
-        TigerBaseErrorListener tbel = new TigerBaseErrorListener();
         TigerLexer tlex = new TigerLexer(c);
-        //tlex.addErrorListener(tbel);
+        tlex.addErrorListener(TigerLexicalErrorListener.INSTANCE);
         BufferedTokenStream bts = new BufferedTokenStream(tlex);
         TigerParser tpars = new TigerParser(bts);
         tpars.removeErrorListeners();
-        tpars.addErrorListener(tbel);
+        tpars.addErrorListener(TigerBaseErrorListener.INSTANCE);
         tpars.tiger_program();
         if (k == 0) {
             System.out.println("successful parse");
